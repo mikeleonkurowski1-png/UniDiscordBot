@@ -6,7 +6,7 @@
 
 # Roadmap
 - Projekt aufsetzen und Github Repositorie erstellen (X)
-- JDA einbinden und den Bot online bringen 
+- JDA einbinden und den Bot online bringen (X)
 - Täglich den Speiseplan der Mensa auslesen können
 - Diesen dann automatisch jeden Morgen im Discord Server posten
 - Rollen-Verteil-System bauen damit jeder Nutzer selbst entscheiden kann, ob er vom Bot gepinged werden kann.
