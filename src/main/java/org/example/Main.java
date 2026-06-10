@@ -22,6 +22,11 @@ public class Main {
                     .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT)
                     .build();
             System.out.println("erfolg");
+            //AuslesenKlasse klasse = new AuslesenKlasse();
+            //klasse.Auslesen();
+
+            String Ergebniss = AuslesenKlasse.Auslesen();
+            System.out.println(Ergebniss);
 
         } catch (Exception e) {
             System.err.println("Error: Die Datei config.properties konnte nicht ausgelesen werden!");
