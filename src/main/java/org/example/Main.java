@@ -7,10 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
 
 public class Main {
     public static void main(String[] args) {
@@ -21,7 +17,7 @@ public class Main {
             JDABuilder.createDefault(Inhalt)
                     .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT)
                     .build();
-            System.out.println("erfolg");
+            System.out.println("erfolgreich gestartet");
             //AuslesenKlasse klasse = new AuslesenKlasse();
             //klasse.Auslesen();
 
