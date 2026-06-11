@@ -2,6 +2,8 @@ package org.example;
 
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,18 +16,27 @@ public class Main {
         try {
             String Inhalt = Files.readString(filePath);
 
-            JDABuilder.createDefault(Inhalt)
+            JDA jda = JDABuilder.createDefault(Inhalt)
                     .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT)
                     .build();
-            System.out.println("erfolgreich gestartet");
+
+            jda.awaitReady();
+            TextChannel kanal = jda.getTextChannelById("1514717919714607104");
+            String Speiseplan = AuslesenKlasse.Auslesen();
+            kanal.sendMessage(Speiseplan).queue();
+
+
+
+
+            //System.out.println("erfolgreich gestartet");
             //AuslesenKlasse klasse = new AuslesenKlasse();
             //klasse.Auslesen();
 
-            String Ergebniss = AuslesenKlasse.Auslesen();
-            System.out.println(Ergebniss);
+            //String Ergebniss = AuslesenKlasse.Auslesen();
+            //System.out.println(Ergebniss);
 
         } catch (Exception e) {
-            System.err.println("Error: Die Datei config.properties konnte nicht ausgelesen werden!");
+            e.printStackTrace();
         }
     }
 }
