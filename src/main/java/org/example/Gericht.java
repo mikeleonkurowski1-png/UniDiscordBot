@@ -6,6 +6,6 @@ public class Gericht {
     public Preise prices;
 
     public static class Preise {
-        public double studends;
+        public double students;
     }
 }

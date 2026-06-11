@@ -25,8 +25,14 @@ public class AuslesenKlasse {
                 Gericht[] gerichte = gson.fromJson(json, Gericht[].class);
 
                 if(gerichte.length > 0){
-                    Gericht gerichteins = gerichte[0];
-                    return "Gericht: " + gerichteins.name + " (" + gerichteins.category + ")" + "[\n" + "Preis: " + gerichteins.prices.studends + "€";
+                    StringBuilder Speiseplan = new StringBuilder();
+                    Speiseplan.append("Heutiger Speiseplan: \n\n");
+
+                    for (Gericht g : gerichte) {
+                        Speiseplan.append("Gericht: ").append(g.name).append(" (Kategorie: ") .append(g.category).append(") \n").append("Preis:").append(g.prices.students).append("€\n\n");
+
+                    }
+                    return Speiseplan.toString();
                 }else {
                     return "Heute gibt es keine Gerichte";
                 }
