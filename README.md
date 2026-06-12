@@ -21,3 +21,7 @@
 - OkHttp: Für die HTTP-Anfrage an die OpenMensa-API
 - Gson (Google): Um die JSON-Daten der API zu parsen
 - ScheduledExecutorService: Für die automatische Zeitsteuerung 
+
+
+# Bot im Einsatz:
+![Bot im Einsatz](Screenshot.png)
