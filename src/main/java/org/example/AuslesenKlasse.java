@@ -26,7 +26,7 @@ public class AuslesenKlasse {
 
                 if(gerichte.length > 0){
                     StringBuilder Speiseplan = new StringBuilder();
-                    Speiseplan.append(Tag + "\n" + "Heutiger Speiseplan: \n\n");
+                    Speiseplan.append("<@&" + "1515059896222093594" + ">" + "\n" + Tag + "\n" + "Heutiger Speiseplan: \n\n");
 
                     for (Gericht g : gerichte) {
                         Speiseplan.append("Gericht: ").append(g.name).append(" (Kategorie: ") .append(g.category).append(") \n").append("Preis:").append(g.prices.students).append("€\n\n");

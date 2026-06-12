@@ -24,7 +24,8 @@ public class Main {
             String inhalt = Files.readString(filePath); //Token auslesen aus der Textdatei
 
             JDA jda = JDABuilder.createDefault(inhalt)
-                    .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT)
+                    .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MESSAGE_REACTIONS)
+                    .addEventListeners(new PingVerteiler())
                     .build();
 
             jda.awaitReady();
@@ -43,7 +44,7 @@ public class Main {
             };
 
             //berechnen des Zeitabstands bis zum nächsten Senden des Speiseplans:
-            LocalTime zieluhrzeit = LocalTime.of(10, 0);
+            LocalTime zieluhrzeit = LocalTime.of(10, 01); //10:01 Uhr, da die Nachricht immer eine Minute früher gesendet wird, wie angegeben.
             LocalDateTime jetzt = LocalDateTime.now();
             LocalDateTime nächstesAusführen = jetzt.with(zieluhrzeit);
 
